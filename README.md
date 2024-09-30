@@ -180,6 +180,7 @@ See code for all available configurations.
 | [HP Elitebook 845g8](hp/elitebook/845/g8)                              | `<nixos-hardware/hp/elitebook/845/g8>`                  |
 | [HP Elitebook 845g9](hp/elitebook/845/g9)                              | `<nixos-hardware/hp/elitebook/845/g9>`                  |
 | [HP Notebook 14-df0023](hp/notebook/14-df0023)                         | `<nixos-hardware/hp/notebook/14-df0023>`                |
+| [HP Laptop 14s-dq2024nf](hp/laptop/14s-dq2024nf)                       | `<nixos-hardware/hp/laptop/14s-dq2024nf>`               |
 | [Huawei Matebook X Pro (2020)](huawei/machc-wa)                        | `<nixos-hardware/huawei/machc-wa>`                      |
 | [i.MX8QuadMax Multisensory Enablement Kit](nxp/imx8qm-mek/)            | `<nixos-hardware/nxp/imx8qm-mek>`                       |
 | [Intel NUC 8i7BEH](intel/nuc/8i7beh/)                                  | `<nixos-hardware/intel/nuc/8i7beh>`                     |
@@ -259,6 +260,7 @@ See code for all available configurations.
 | [Lenovo ThinkPad X1 (11th Gen)](lenovo/thinkpad/x1/11th-gen)           | `<nixos-hardware/lenovo/thinkpad/x1/11th-gen>`          |
 | [Lenovo ThinkPad X1 (12th Gen)](lenovo/thinkpad/x1/12th-gen)           | `<nixos-hardware/lenovo/thinkpad/x1/12th-gen>`          |
 | [Lenovo ThinkPad X1 Extreme Gen 2](lenovo/thinkpad/x1-extreme/gen2)    | `<nixos-hardware/lenovo/thinkpad/x1-extreme/gen2>`      |
+| [Lenovo ThinkPad X1 Extreme Gen 3](lenovo/thinkpad/x1-extreme/gen3)    | `<nixos-hardware/lenovo/thinkpad/x1-extreme/gen3>`      |
 | [Lenovo ThinkPad X1 Extreme Gen 4](lenovo/thinkpad/x1-extreme/gen4)    | `<nixos-hardware/lenovo/thinkpad/x1-extreme/gen4>`      |
 | [Lenovo ThinkPad X1 Nano Gen 1](lenovo/thinkpad/x1-nano/gen1)          | `<nixos-hardware/lenovo/thinkpad/x1-nano/gen1>`         |
 | [Lenovo ThinkPad X13 Yoga](lenovo/thinkpad/x13/yoga)                   | `<nixos-hardware/lenovo/thinkpad/x13/yoga>`             |
@@ -328,7 +330,8 @@ See code for all available configurations.
 | [Supermicro X12SCZ-TLN4F](supermicro/x12scz-tln4f)                     | `<nixos-hardware/supermicro/x12scz-tln4f>`              |
 | [System76 (generic)](system76)                                         | `<nixos-hardware/system76>`                             |
 | [System76 Darter Pro 6](system76/darp6)                                | `<nixos-hardware/system76/darp6>`                       |
-| [System76 Gazelle Gaze18](system76/gaze18)                             | `<nixos-hardware/system76/gaze18>`                      |
+| [System76 Gazelle 18](system76/gaze18)                             | `<nixos-hardware/system76/gaze18>`                      |
+| [System76 Galago Pro 5](system76/galp5-1650)                           | `<nixos-hardware/system76/galp5-1650>`                  | 
 | [Toshiba Chromebook 2 `swanky`](toshiba/swanky)                        | `<nixos-hardware/toshiba/swanky>`                       |
 | [Tuxedo InfinityBook v4](tuxedo/infinitybook/v4)                       | `<nixos-hardware/tuxedo/infinitybook/v4>`               |
 | [TUXEDO InfinityBook Pro 14 - Gen7](tuxedo/infinitybook/pro14/gen7)    | `<nixos-hardware/tuxedo/infinitybook/pro14/gen7>`       |

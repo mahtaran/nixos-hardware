@@ -67,6 +67,7 @@
         dell-poweredge-r7515 = import ./dell/poweredge/r7515;
         dell-precision-3541 = import ./dell/precision/3541;
         dell-precision-5530 = import ./dell/precision/5530;
+        dell-precision-5560 = import ./dell/precision/5560;
         dell-precision-7520 = import ./dell/precision/7520;
         dell-xps-13-7390 = import ./dell/xps/13-7390;
         dell-xps-13-9300 = import ./dell/xps/13-9300;
@@ -118,6 +119,7 @@
         hp-elitebook-845g7 = import ./hp/elitebook/845/g7;
         hp-elitebook-845g8 = import ./hp/elitebook/845/g8;
         hp-elitebook-845g9 = import ./hp/elitebook/845/g9;
+        hp-laptop-14s-dq2024nf = import ./hp/laptop/14s-dq2024nf;
         huawei-machc-wa = import ./huawei/machc-wa;
         hp-notebook-14-df0023 = import ./hp/notebook/14-df0023;
         intel-nuc-8i7beh = import ./intel/nuc/8i7beh;
@@ -203,6 +205,7 @@
         lenovo-thinkpad-x1-12th-gen = import ./lenovo/thinkpad/x1/12th-gen;
         lenovo-thinkpad-x1-extreme = import ./lenovo/thinkpad/x1-extreme;
         lenovo-thinkpad-x1-extreme-gen2 = import ./lenovo/thinkpad/x1-extreme/gen2;
+        lenovo-thinkpad-x1-extreme-gen3 = import ./lenovo/thinkpad/x1-extreme/gen3;
         lenovo-thinkpad-x1-extreme-gen4 = import ./lenovo/thinkpad/x1-extreme/gen4;
         lenovo-thinkpad-x1-nano = import ./lenovo/thinkpad/x1-nano;
         lenovo-thinkpad-x1-nano-gen1 = import ./lenovo/thinkpad/x1-nano/gen1;
@@ -280,6 +283,7 @@
         supermicro-x12scz-tln4f = import ./supermicro/x12scz-tln4f;
         system76 = import ./system76;
         system76-gaze18 = import ./system76/gaze18;
+        system76-galp5-1650 = import ./system76/galp5-1650;
         system76-darp6 = import ./system76/darp6;
         toshiba-swanky = import ./toshiba/swanky;
         tuxedo-infinitybook-v4 = import ./tuxedo/infinitybook/v4;
