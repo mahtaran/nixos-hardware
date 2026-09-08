@@ -1,0 +1,36 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+
+{
+  imports = [
+    ../common
+    ../common/amd.nix
+  ];
+
+  config = {
+    # Everything is updateable through fwupd
+    services.fwupd.enable = true;
+
+    hardware.framework.laptop13.audioEnhancement.rawDeviceName =
+      lib.mkDefault "alsa_output.pci-0000_c1_00.6.HiFi__Speaker__sink";
+
+    # suspend works with 6.15
+    boot.kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "6.15") (
+      lib.mkDefault pkgs.linuxPackages_latest
+    );
+
+    # The framework bios wrongly reports the ACP device as wired, causing
+    # issues with alsa ucm, but also generally adding a phantom interface
+    # to the system.
+    #
+    # See discussion in https://github.com/NixOS/nixos-hardware/issues/1603
+    boot.blacklistedKernelModules = [
+      "snd_acp70"
+      "snd_acp_pci"
+    ];
+  };
+}

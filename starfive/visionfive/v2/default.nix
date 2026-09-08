@@ -1,21 +1,32 @@
-{ config, lib, pkgs, ... }: {
-  boot = {
-    # Force no ZFS (from nixos/modules/profiles/base.nix) until updated to kernel 6.0
-    supportedFilesystems =
-      lib.mkForce [ "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs" ];
-    consoleLogLevel = lib.mkDefault 7;
-    kernelPackages = lib.mkDefault (pkgs.callPackage ./linux-6.6.nix {
-      inherit (config.boot) kernelPatches;
-    });
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  imports = [
+    ./firmware.nix
+  ];
 
-    kernelParams =
-      lib.mkDefault [ "console=tty0" "console=ttyS0,115200n8" "earlycon=sbi" ];
+  boot = {
+    consoleLogLevel = lib.mkDefault 7;
 
     initrd.availableKernelModules = [ "dw_mmc_starfive" ];
+
+    # Support booting SD-image from NVME SSD
+    initrd.kernelModules = [
+      "clk-starfive-jh7110-aon"
+      "clk-starfive-jh7110-stg"
+      "phy-jh7110-pcie"
+      "pcie-starfive"
+      "nvme"
+    ];
 
     loader = {
       grub.enable = lib.mkDefault false;
       generic-extlinux-compatible.enable = lib.mkDefault true;
     };
   };
+
 }

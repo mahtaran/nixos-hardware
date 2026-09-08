@@ -1,18 +1,22 @@
-{ lib
-, pkgs
-, ...
-}:
+{ lib, pkgs, ... }:
 
 {
-  boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_rpi3;
+  imports = [
+    ../common/default.nix
+  ];
+
+  boot = {
+    kernelPackages = lib.mkDefault (
+      pkgs.linuxPackagesFor (pkgs.callPackage ../common/kernel.nix { rpiVersion = 3; })
+    );
+  };
 
   # fix the following error :
   # modprobe: FATAL: Module ahci not found in directory
   # https://github.com/NixOS/nixpkgs/issues/154163#issuecomment-1350599022
   nixpkgs.overlays = [
     (_final: super: {
-      makeModulesClosure = x:
-        super.makeModulesClosure (x // { allowMissing = true; });
+      makeModulesClosure = x: super.makeModulesClosure (x // { allowMissing = true; });
     })
   ];
 
@@ -31,4 +35,5 @@
     "console=tty0"
   ];
 
+  hardware.firmware = [ (pkgs.callPackage ../common/raspberry-pi-wireless-firmware.nix { }) ];
 }

@@ -1,9 +1,13 @@
-{ lib, pkgs, ...}:
+{ lib, pkgs, ... }:
 
 {
+  imports = [ ../common/default.nix ];
+
   boot = {
     consoleLogLevel = lib.mkDefault 7;
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_rpi2;
+    kernelPackages = lib.mkDefault (
+      pkgs.linuxPackagesFor (pkgs.callPackage ../common/kernel.nix { rpiVersion = 2; })
+    );
     kernelParams = [
       "dwc_otg.lpm_enable=0"
       "console=ttyAMA0,115200"
@@ -13,14 +17,11 @@
     loader = {
       grub.enable = lib.mkDefault false;
       generationsDir.enable = lib.mkDefault false;
-      raspberryPi = {
-        enable = lib.mkDefault true;
-        version = lib.mkDefault 2;
-      };
+      generic-extlinux-compatible.enable = lib.mkDefault true;
     };
   };
 
-  nixpkgs.config.platform = lib.systems.platforms.raspberrypi2;
+  nixpkgs.config.platform = lib.systems.platforms.armv7l-hf-multiplatform;
 
   # cpufrequtils doesn't build on ARM
   powerManagement.enable = lib.mkDefault false;

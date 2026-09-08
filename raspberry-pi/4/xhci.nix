@@ -1,15 +1,11 @@
-{
-  config,
-  lib,
-  ...
-}: let
+{ config, lib, ... }:
+let
   cfg = config.hardware.raspberry-pi."4".xhci;
-in {
+in
+{
   options.hardware = {
     raspberry-pi."4".xhci = {
-      enable = lib.mkEnableOption ''
-        Enable builtin XHCI controller for USB with otg_mode=1 in config.txt
-      '';
+      enable = lib.mkEnableOption "builtin XHCI controller for USB with otg_mode=1 in config.txt";
     };
   };
 
